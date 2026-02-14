@@ -1,25 +1,36 @@
 # Wosap
 
-Wosap is a Windows desktop app for distributing `.tar.gz` files to multiple Android devices using ADB.
+Wosap adalah aplikasi desktop Windows untuk mendistribusikan file `.tar.gz` ke banyak perangkat Android menggunakan ADB.
 
-## Features
+## Fitur Utama
 
-- PySide6 desktop UI (light, compact layout)
-- Recursive `.tar.gz` scan from source folder
-- Multi-device selection and custom device labels
-- Auto/manual destination path mode
-- Transfer preview before execution
-- Parallel push with pause/resume
-- Per-device status + detailed log output
-- Continue-on-failure summary
+- UI desktop berbasis PySide6 (tema terang, layout compact)
+- Scan file `.tar.gz` secara rekursif dari folder sumber
+- Pilih perangkat tertentu (bisa pilih semua / hapus semua)
+- Label nama perangkat custom (disimpan otomatis)
+- Mode tujuan:
+  - Otomatis berdasarkan tanggal (`YYYYMMDD`)
+  - Manual full path
+- Preview distribusi sebelum proses dimulai
+- Transfer paralel multi-device
+- Pause / lanjut proses transfer
+- Status per-perangkat + log detail
+- Jika satu perangkat gagal, perangkat lain tetap lanjut
 
-## Requirements
+## Persyaratan
 
 - Windows
 - Python 3.12+
-- ADB in PATH (Android Platform Tools)
+- ADB (Android Platform Tools) tersedia di `PATH`
 
-## Run from source
+Cek ADB:
+
+```bash
+adb version
+adb devices
+```
+
+## Jalankan dari Source
 
 ```bash
 python -m pip install -r requirements.txt
@@ -32,16 +43,50 @@ python wosap.py
 build.bat
 ```
 
-Output:
+Hasil build:
 - `dist/Wosap/Wosap.exe`
 
-## Build Installer
+## Build Installer (Setup EXE)
 
-Install Inno Setup 6 first, then:
+Pastikan **Inno Setup 6** sudah terpasang, lalu jalankan:
 
 ```bash
 build-installer.bat
 ```
 
-Output:
+Hasil build installer:
 - `installer/Wosap-Setup-1.0.1.exe`
+
+## Rilis GitHub
+
+Rilis terbaru tersedia di:
+- `https://github.com/jawkills/wosap/releases/tag/v1.0.1`
+
+Asset installer langsung:
+- `https://github.com/jawkills/wosap/releases/download/v1.0.1/Wosap-Setup-1.0.1.exe`
+
+## Cara Share ke User
+
+Yang dibagikan (disarankan):
+- file installer `Wosap-Setup-1.0.1.exe`
+
+Instruksi singkat untuk user:
+1. Jalankan installer.
+2. Klik Next -> Install -> Finish.
+3. Buka Wosap dari Desktop/Start Menu.
+4. Pastikan ADB sudah terpasang dan bisa dipanggil dari CMD.
+
+## Troubleshooting Singkat
+
+- **Perangkat tidak terdeteksi**
+  - Cek kabel/data mode
+  - Jalankan `adb devices`
+  - Aktifkan USB debugging
+
+- **Aplikasi tidak bisa transfer**
+  - Pastikan path folder sumber valid
+  - Pastikan minimal 1 perangkat dipilih
+  - Cek log aplikasi untuk detail error
+
+- **Windows SmartScreen muncul**
+  - Klik **More info** -> **Run anyway** (jika sumber file terpercaya)
