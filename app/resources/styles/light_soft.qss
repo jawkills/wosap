@@ -1,0 +1,159 @@
+QMainWindow {
+  background: #f4f7fb;
+}
+
+QLabel#headerTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1b2533;
+}
+
+QFrame#card {
+  background: #ffffff;
+  border: 1px solid #dde6f0;
+  border-radius: 10px;
+}
+
+QLabel#cardTitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: #223244;
+}
+
+QLabel[muted="true"] {
+  color: #4f647c;
+}
+
+QLabel[accent="true"] {
+  color: #2f77d4;
+  font-weight: 600;
+}
+
+QLineEdit,
+QTextEdit,
+QSpinBox,
+QScrollArea,
+QProgressBar {
+  background: #f9fbff;
+  border: 1px solid #d7e2ef;
+  border-radius: 6px;
+  padding: 4px 6px;
+  color: #1f2a37;
+}
+
+QLineEdit:focus,
+QTextEdit:focus,
+QSpinBox:focus {
+  border: 1px solid #5c8fd8;
+}
+
+QPushButton {
+  background: #e8eff8;
+  border: 1px solid #cedaed;
+  border-radius: 6px;
+  color: #1e2a39;
+  padding: 5px 10px;
+  font-weight: 500;
+}
+
+QPushButton:hover {
+  background: #dce9f7;
+}
+
+QPushButton:disabled {
+  color: #8a9db2;
+  background: #eef3f9;
+}
+
+QPushButton[success="true"] {
+  background: #d9f0df;
+  border: 1px solid #b8dec2;
+  color: #155f2f;
+}
+
+QPushButton[success="true"]:hover {
+  background: #c9e8d3;
+}
+
+QPushButton[danger="true"] {
+  background: #fde9ea;
+  border: 1px solid #f2ced2;
+  color: #9a2027;
+}
+
+QPushButton[danger="true"]:hover {
+  background: #f8dde0;
+}
+
+QProgressBar {
+  min-height: 10px;
+  max-height: 10px;
+}
+
+QProgressBar::chunk {
+  background-color: #4e88dd;
+  border-radius: 6px;
+}
+
+QFrame#deviceCard {
+  background: #ffffff;
+  border: 1px solid #c6d7eb;
+  border-radius: 8px;
+}
+
+QLabel[status="true"] {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+QCheckBox::indicator {
+  width: 14px;
+  height: 14px;
+}
+
+QFrame#deviceCard QLineEdit {
+  background: #f7fbff;
+  border: 1px solid #bed0e5;
+  color: #1a2d43;
+  font-weight: 600;
+}
+
+QFrame#deviceCard QLineEdit:focus {
+  border: 1px solid #4e88dd;
+}
+
+QFrame#deviceCard QLabel[muted="true"] {
+  color: #5a7090;
+  font-weight: 500;
+}
+
+QFrame#deviceCard QProgressBar {
+  min-height: 8px;
+  max-height: 8px;
+  border: 1px solid #c6d7eb;
+  background: #eef4fc;
+}
+
+QScrollBar:vertical {
+  background: #eef3fa;
+  width: 10px;
+  margin: 1px;
+  border-radius: 6px;
+}
+
+QScrollBar::handle:vertical {
+  background: #a8bfdc;
+  min-height: 22px;
+  border-radius: 6px;
+}
+
+QScrollBar::handle:vertical:hover {
+  background: #8eadd2;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical,
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+  background: transparent;
+}
